@@ -21,8 +21,8 @@ variable "k3s_install_options" {
   type        = map(string)
   description = "Install options to pass to k3s-install.sh"
   default = {
-    "INSTALL_K3S_EXEC"    = "server --cluster-init",
-    "INSTALL_K3S_CHANNEL" = "stable" # stable, latest, testing
+    # "INSTALL_K3S_EXEC"    = "server --cluster-init",
+    # "INSTALL_K3S_CHANNEL" = "stable" # stable, latest, testing
   }
 }
 
