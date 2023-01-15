@@ -4,7 +4,7 @@ provider "libvirt" {
 
 module "coreos_ignition" {
   source              = "./modules/ignition"
-  hostname       = var.hostname
+  hostname            = var.hostname
   ssh_authorized_keys = var.ssh_authorized_keys
 }
 

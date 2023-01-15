@@ -6,5 +6,5 @@ resource "libvirt_volume" "coreos_base" {
 resource "libvirt_volume" "coreos_node" {
   name           = "${var.hostname}.qcow2"
   base_volume_id = libvirt_volume.coreos_base.id
-  size           = var.host_volume_size * pow(1024,3) # Size is in bytes
+  size           = var.host_volume_size * pow(1024, 3) # Size is in bytes
 }
