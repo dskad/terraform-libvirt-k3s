@@ -1,0 +1,19 @@
+[Unit]
+Description=Run K3s script
+Wants = network-online.target
+After = network-online.target
+ConditionPathExists=/opt/bin/k3s-install.sh
+ConditionPathExists=!/opt/bin/k3s
+
+[Service]
+Type=oneshot
+TimeoutStartSec=0
+RemainAfterExit=yes
+KillMode=process
+%{ for k, v in env_config ~}
+Environment="${k}=${v}"
+%{ endfor ~}
+ExecStart=/usr/bin/sh -c "/opt/bin/k3s-install.sh"
+
+[Install]
+WantedBy=multi-user.target
