@@ -1,7 +1,9 @@
 output "ip_addresses" {
-  value = module.k3s_cluster_bootstrap_node.*.ip_addresses
+  description = "IP addresses of the k3s node"
+  value = module.k3s_node.*.ip_addresses
 }
 
 output "hostnames" {
-  value = module.k3s_cluster_bootstrap_node.*.hostname
+  description = "Hostname of the k3s node"
+  value = module.k3s_node.*.hostname
 }
