@@ -37,3 +37,4 @@ terraform.rc
 # Ignore qemu images
 *.qcow2
 *.xz
+examples/images
