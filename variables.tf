@@ -1,12 +1,13 @@
 variable "hostname" {
   type        = string
   description = "Host name of VM"
+  default = "coreos"
 }
 
 variable "img_file" {
   description = "CoreOS qcow2 image file"
   type        = string
-  default     = "./img/fedora-coreos.qcow2"
+  default     = ""
 }
 
 variable "ssh_authorized_keys" {

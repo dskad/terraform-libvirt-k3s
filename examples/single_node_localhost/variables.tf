@@ -3,9 +3,15 @@ variable "img_file" {
   type        = string
 }
 
+variable "hostname" {
+  description = "Hostname of the VM"
+  type = string
+  default = "coreos"
+}
+
 variable "ssh_authorized_keys" {
-  type        = list(string)
   description = "SSH authorized keys to be added to the core user"
+  type        = list(string)
   default     = []
   sensitive   = true
 }
