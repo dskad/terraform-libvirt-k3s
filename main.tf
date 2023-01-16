@@ -6,6 +6,7 @@ module "coreos_ignition" {
   source              = "./modules/ignition"
   hostname            = var.hostname
   ssh_authorized_keys = var.ssh_authorized_keys
+  k3s_install_options = var.k3s_install_options
 }
 
 resource "libvirt_ignition" "ignition" {

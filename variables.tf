@@ -21,7 +21,7 @@ variable "ssh_authorized_keys" {
 }
 
 variable "libvirt_uri" {
-  description = "uri connection strting for libvirt"
+  description = "uri connection string for libvirt"
   type        = string
   default     = "qemu:///system"
 }
@@ -34,7 +34,7 @@ variable "vmem" {
 
 variable "vcpu" {
   type        = number
-  description = "Nnumber of virtual CPUs"
+  description = "Number of virtual CPUs"
   default     = 2
 }
 
@@ -44,19 +44,8 @@ variable "host_volume_size" {
   default     = 80
 }
 
-# variable "hostname_format" {
-#   type    = string
-#   default = "coreos%02d"
-# }
-
-# CoreOS Channel (stable,testing,next)
-# variable "coreos_channel" {
-#   description = "CoreOS Channel (stable,testing,next)"
-#   type        = string
-#   default     = "testing"
-
-#   validation {
-#     condition     = contains(["stable", "testing", "next"], var.coreos_channel)
-#     error_message = "The coreos_channel value must be one of 'stabe', 'testing', 'next'."
-#   }
-# }
+variable "k3s_install_options" {
+  type        = map(string)
+  description = "Install options to pass to k3s-install.sh"
+  default = {}
+}
