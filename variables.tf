@@ -1,7 +1,7 @@
 variable "hostname" {
   type        = string
   description = "Host name of VM"
-  default = "coreos"
+  default     = "coreos"
 }
 
 variable "img_file" {
@@ -47,5 +47,5 @@ variable "host_volume_size" {
 variable "k3s_install_options" {
   type        = map(string)
   description = "Install options to pass to k3s-install.sh"
-  default = {}
+  default     = {}
 }

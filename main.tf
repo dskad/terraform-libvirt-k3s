@@ -1,7 +1,3 @@
-provider "libvirt" {
-  uri = var.libvirt_uri
-}
-
 module "coreos_ignition" {
   source              = "./modules/ignition"
   hostname            = var.hostname
