@@ -26,6 +26,7 @@ resource "libvirt_domain" "coreos" {
     mode = "host-passthrough"
   }
 
+# TODO #1 - Not everyone has a br0 bridge network interface!
   network_interface {
     bridge         = "br0"
     wait_for_lease = true
@@ -40,6 +41,7 @@ resource "libvirt_domain" "coreos" {
     type = "virtio"
   }
 
+# Adding the channel for the qemu guest agent
   xml {
     xslt = file("${path.module}/files/xsl/add_GA_channel.xsl")
   }
