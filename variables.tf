@@ -4,10 +4,17 @@ variable "hostname" {
   default     = "coreos"
 }
 
-variable "img_file" {
+# TODO libvirt disk image option can be more than a string to a local file
+variable "image_file" {
   description = "CoreOS qcow2 image file"
   type        = string
-  default     = ""
+  default = ""
+}
+
+variable "base_image" {
+  description = "Existing base image to use for VM"
+  type = string
+  default = ""
 }
 
 variable "ssh_authorized_keys" {

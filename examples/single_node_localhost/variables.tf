@@ -5,8 +5,8 @@ variable "img_file" {
 
 variable "hostname" {
   description = "Hostname of the VM"
-  type = string
-  default = "coreos"
+  type        = string
+  default     = "coreos"
 }
 
 variable "ssh_authorized_keys" {
